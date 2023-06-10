@@ -2,15 +2,29 @@ Local DNS Server IP
 -------------------
 <ip-here>
 
+    0.0.0.0         10.0.0.1        0.0.0.0         UG    100    0        0 eth0
+    10.0.0.0        0.0.0.0         255.255.255.0   U     100    0        0 eth0
+    10.0.0.1        0.0.0.0         255.255.255.255 UH    100    0        0 eth0
+    10.0.0.2        0.0.0.0         255.255.255.255 UH    100    0        0 eth0
 
+    
 
 Default gateway IP
 -------------------
 <ip-here>
-
-
+    
+    nameserver 127.0.0.53
+    options edns0 trust-ad
+    search ec2.internal
+    ubuntu@ip-10-0-0-116:~$
+    
 
 DHCP IP allocation sys-logs
 -------------------
 <logs-here>
 
+  
+  DHCPDISCOVER on eth0 to 255.255.255.255 port 67 interval 3 (xid=0xecb1160e)
+    DHCPOFFER of 10.0.0.116 from 10.0.0.1
+     DHCPREQUEST for 10.0.0.116 on eth0 to 255.255.255.255 port 67 (xid=0xe16b1ec)
+    
